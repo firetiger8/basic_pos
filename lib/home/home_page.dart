@@ -1,7 +1,8 @@
+import 'package:basic_pos/pos/cash_register_page.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
-  HomePage({Key? key}) : super(key: key);
+  HomePage({super.key});
 
   double screenHeight = 0.0;
   double screenWidth = 0.0;
@@ -17,7 +18,7 @@ class HomePage extends StatelessWidget {
           appBar: AppBar(
             title: const Row(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: [SizedBox(width: 10), Text("Basic POS - Store ABC", style: const TextStyle(color: Colors.black, fontSize: 14))],
+              children: [SizedBox(width: 10), Text("Basic POS - Store ABC", style: TextStyle(color: Colors.black, fontSize: 14))],
             ),
           ),
           resizeToAvoidBottomInset: false,
@@ -40,7 +41,9 @@ class HomePage extends StatelessWidget {
                         color: Colors.blueGrey[200],
                         child: InkWell(
                           splashColor: Colors.teal[100],
-                          onTap: () {},
+                          onTap: () {
+                            Navigator.push(context, MaterialPageRoute(builder: (context) => CashRegisterPage()));
+                          },
                           child: Container(
                               margin: const EdgeInsets.all(2),
                               width: screenWidth * 0.12,
